@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="container">
+        <div class="noticia">
+            <h1>{{noticia.titulo}}</h1>
+            <img src="{{noticia.caminho_imagem}}">
+            <p>{{noticia.texto}}</p>
+        </div>
+        <div class="limpa"></div>
+
+</div>
+{% endblock %}

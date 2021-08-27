@@ -1,0 +1,33 @@
+<!-- app/templates/home/dashboard.html -->
+
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block body %}
+    <div class="container">
+        {% for i in noticias %}
+            <li class="link">
+                <a href="{{ url_for('home.pag_noticia',id=i.id) }}">
+                    <div class="{{i.titulo[:8].replace(' ','-')}}" >
+                        <div class="texto">
+                            <h1>{{i.titulo}}</h1>
+                        </div>
+                    </div>
+                
+                     <style type="text/css">
+                        .{{i.titulo[:8].replace(' ','-')}}{
+                            width: 500px;
+                            height: 300px;
+                            background-image: url("{{i.caminho_imagem}}");
+                            background-repeat: no-repeat;
+                            background-size: 500px 300px;
+                            font-size: 15px;
+                            margin: 0 auto;
+                            padding-top: 200px;
+                        }
+                    </style>
+                </a>
+            </li>
+        {% endfor%}
+    </div>
+
+{% endblock %}

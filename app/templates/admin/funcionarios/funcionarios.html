@@ -1,0 +1,62 @@
+<!-- app/templates/admin/departments/departments.html -->
+
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Gerenciar Funcionarios{% endblock %}
+{% block body %}
+<div class="container">
+  <div class="center">
+    <div>
+      <div >
+        <br/>
+        {{ utils.flashed_messages() }}
+        <br/>
+        <h1 style="text-align:center;">Gerenciar Funcionarios</h1>
+        {% if funcionarios %}
+          <hr class="intro-divider">
+          <div class=>
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th width="15%"> Nome </th>
+                  <th width="20%"> Sobrenome </th>
+                  <th width="20%"> Email </th>
+                  <th width="15%"> Usuario </th>
+                  <th width="15%"> Editar </th>
+                  <th width="15%"> Apagar </th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for funcionario in funcionarios %}
+                <tr>
+                  <td> {{ funcionario.primeiro_nome }} </td>
+                  <td> {{ funcionario.ultimo_nome }} </td>
+                  <td> {{ funcionario.email }} </td>
+                  <td> {{ funcionario.usuario }} </td>                  
+                  <td>
+                    <a href="{{ url_for('admin.editar_funcionario', id=funcionario.id) }}">
+                      <i class="fa fa-pencil"></i> Editar 
+                    </a>
+                  </td>
+                  <td>
+                    <a href="{{ url_for('admin.deletar_funcionario', id=funcionario.id) }}">
+                      <i class="fa fa-trash"></i> Apagar 
+                    </a>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div style="text-align: center">
+        {% else %}
+          <div style="text-align: center">
+            <h3> Nenhuma noticia. </h3>
+            <hr class="intro-divider">
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

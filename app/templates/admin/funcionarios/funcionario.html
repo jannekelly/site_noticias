@@ -1,0 +1,19 @@
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %} Editar noticia {% endblock %}
+{% block body %}
+<div class="container">
+ <div class="center">
+    <div >
+      <div >
+        <div >            
+            <h1>Editar noticia</h1>            
+            <br/>
+            {{ wtf.quick_form(form) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

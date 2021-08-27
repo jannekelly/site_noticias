@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>{{ title }} | AllNews</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/reset.css') }}" rel="stylesheet">
+    
+</head>
+
+<body>
+    <header>
+        <div class="azul">
+            <img src="{{ url_for('static', filename='img/logo.png') }}">                                                                                   
+        </div>
+        <div class="menu">
+            <ul >
+                {% if current_user.is_authenticated %}
+                    {% if current_user.is_admin %}
+                        <li><a href="{{ url_for('home.admin_dashboard') }}">Home</a></li>
+                        <li><a href="{{ url_for('admin.listar_noticias') }}">Notícias</a></li>
+                        <li><a href="{{ url_for('admin.listar_funcionarios') }}">Funcionários</a></li>
+                        <li><a href="{{ url_for('auth.register')}}">Registrar</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('home.dashboard') }}">Home</a></li>
+                        <li><a href="{{ url_for('admin.listar_noticias') }}">Notícias</a></li>
+                        
+                    {% endif %}
+                        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                        <li><a><i class="fa fa-user"></i>  Olá, {{ current_user.usuario }}!</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
+                {% endif %}
+            </ul>
+            </div>
+    </header>
+    {% block body %}
+    {% endblock %}
+    <footer >
+        <div class="azul">
+            <img src="{{ url_for('static', filename='img/logo.png') }}">
+        </div>
+        
+    </footer>
+
+</body>
+</html>

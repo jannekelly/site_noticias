@@ -1,0 +1,145 @@
+body h1{
+    font-size: 25px;
+    font-weight: bold;
+}
+body{
+    background-color: ghostwhite;
+}
+.container{
+  text-align: -moz-center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+
+}
+.azul{
+    background-color: blueviolet;
+    width: 100%;
+    height: 10%;
+    z-index: -2;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body, h1, h2, h3 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+a, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+  color: #aec251;
+}
+
+a:hover, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
+  color: #687430;
+}
+.outer {
+    display: table;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+}
+.center{
+    border: none;
+    width: 700px;
+    margin-top: 50px;
+    padding:5px 30px;
+    background-color: gainsboro;
+}
+#enviar,#submit{
+    border:solid 1px;
+    background-color: blueviolet;
+}
+
+ul{
+    float: right;
+   
+}
+.menu{
+    margin-top: -29px;
+    margin-right: 10px;
+}
+.menu ul li{
+    display: inline;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.outer {
+    display: table;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.noticia {
+    margin-top:20px;
+}
+.noticia p{
+    font-family: "PT Serif";
+    font-size: 21px;
+    line-height: 32px;
+    text-align:justify;
+    
+}
+.limpa{
+
+    clear:both; 
+}
+.noticia h1{
+    font-size: 40px;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 50px;
+}
+.noticia img{
+    width: 500px;
+    height: 300px;
+    margin: 20px auto;
+    float: left;
+    margin-right: 10px;
+
+}
+.link{
+    width: 500px;
+    height: 300px;
+    display: inline-flex;
+    margin:10px 15px;
+    
+}
+
+a:hover{
+    color: black;
+}
+.link a{
+    color: black;
+}
+
+
+.texto{
+    width: 500px;
+    height: 100px;
+    background-color: grey;
+    opacity: 0.7;
+   
+}
